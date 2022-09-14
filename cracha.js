@@ -3,17 +3,17 @@ var btnSalvar = document.querySelector("#salvar");
 btnSalvar.addEventListener("click", function(event){
     event.preventDefault();
     
-    var empresa = document.getElementById("empresa").value;
-    var proximidade = document.getElementById("proximidade").value;
-    var barras = document.getElementById("barras").value;
-    var perfurado = document.getElementById("perfurado").value;
-    var presilha = document.getElementById("presilha").value;
-    var protetor = document.getElementById("protetor").value;
-    var cordão = document.getElementById("cordão").value;
-    var valorCracha = document.getElementById("valorCracha").value;
-    var valorPresilha = document.getElementById("valorPresilha").value;
-    var valorProtetor = document.getElementById("valorProtetor").value;
-    var valorCordão = document.getElementById("valorCordão").value;
+    var empresaR = document.getElementById("empresa").value;
+    var proximidadeR = document.getElementById("proximidade").value;
+    var barrasR = document.getElementById("barras").value;
+    var perfuradoR = document.getElementById("perfurado").value;
+    var presilhaR = document.getElementById("presilha").value;
+    var protetorR = document.getElementById("protetor").value;
+    var cordãoR = document.getElementById("cordão").value;
+    var valorCrachaR = document.getElementById("valorCracha").value;
+    var valorPresilhaR = document.getElementById("valorPresilha").value;
+    var valorProtetorR = document.getElementById("valorProtetor").value;
+    var valorCordãoR = document.getElementById("valorCordão").value;
 
     document.getElementById("empresa").value = "";
     document.getElementById("proximidade").selectedIndex = 0;
@@ -27,22 +27,47 @@ btnSalvar.addEventListener("click", function(event){
     document.getElementById("valorProtetor").value = "";
     document.getElementById("valorCordão").value = "";
 
+    var tabela = document.querySelector("#tabelaCracha").querySelector("tbody");
     var linhaCracha = document.createElement("tr");
     var empresa = document.createElement("td");
     var proximidade = document.createElement("td");
     var barras = document.createElement("td");
     var perfurado = document.createElement("td");
-    var presilha = document.getElementById("presilha").value;
-    var protetor = document.getElementById("protetor").value;
-    var cordão = document.getElementById("cordão").value;
-    var valorCracha = document.getElementById("valorCracha").value;
-    var valorPresilha = document.getElementById("valorPresilha").value;
-    var valorProtetor = document.getElementById("valorProtetor").value;
-    var valorCordão = document.getElementById("valorCordão").value;
+    var presilha = document.createElement("td");
+    var protetor = document.createElement("td");
+    var cordão = document.createElement("td");
+    var valorCracha = document.createElement("td");
+    var valorPresilha = document.createElement("td");
+    var valorProtetor = document.createElement("td");
+    var valorCordão = document.createElement("td");
 
-    col1.textContent = "Apple";
-    row.appendChild(col1);
-    tbody.appendChild(row);
+    empresa.textContent = empresaR.value;
+    proximidade.textContent = proximidadeR.value;
+    barras.textContent = barrasR.value;
+    perfurado.textContent = perfuradoR.value;
+    presilha.textContent = presilhaR.value;
+    protetor.textContent = protetorR.value;
+    cordão.textContent = cordãoR.value;
+    valorCracha.textContent = valorCrachaR.value;
+    valorPresilha.textContent = valorPresilhaR.value;
+    valorProtetor.textContent = valorProtetorR.value;
+    valorCordão.textContent = valorCordãoR.value;
+
+
+
+    
+    linhaCracha.appendChild(empresa);
+    linhaCracha.appendChild(proximidade);
+    linhaCracha.appendChild(barras);
+    linhaCracha.appendChild(perfurado);
+    linhaCracha.appendChild(presilha);
+    linhaCracha.appendChild(protetor);
+    linhaCracha.appendChild(cordão);
+    linhaCracha.appendChild(valorCracha);
+    linhaCracha.appendChild(valorPresilha);
+    linhaCracha.appendChild(valorProtetor);
+    linhaCracha.appendChild(valorCordão);
+    tabela.appendChild(linhaCracha);
 
     //console.log("Empresa: ", proximidade);
 })
@@ -64,4 +89,19 @@ function salvarCracha(){
     });
       Logger.log(filter);
       //return JSON.stringify(filte);
+  }
+
+  function abreTab(event, idTab) {
+    var conteudos = document.getElementsByClassName("conteudo");
+    for (var i = 0; i < conteudos.length; i++){
+      conteudos[i].style.display = 'none';
+    }
+
+    var tabs = document.getElementsByClassName("tab-button");        
+    for (var i = 0; i < tabs.length; i++){
+      tabs[i].className = tabs[i].className.replace("ativo", "");
+    }
+
+    document.getElementById(idTab).style.display = 'block';
+    event.currentTarget.className += " ativo";
   }
