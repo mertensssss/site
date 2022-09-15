@@ -1,19 +1,22 @@
+//const id = '1nzSmzAulpOGV63l2LoLvXPCWVfgkVAOvoVWUZYCzNk4'; //Planilha banco de dados
+//const ss = SpreadsheetApp.openById(id);
+
 var btnSalvar = document.querySelector("#salvar");
 
 btnSalvar.addEventListener("click", function(event){
     event.preventDefault();
     
-    var empresaR = document.getElementById("empresa").value;
-    var proximidadeR = document.getElementById("proximidade").value;
-    var barrasR = document.getElementById("barras").value;
-    var perfuradoR = document.getElementById("perfurado").value;
-    var presilhaR = document.getElementById("presilha").value;
-    var protetorR = document.getElementById("protetor").value;
-    var cordãoR = document.getElementById("cordão").value;
-    var valorCrachaR = document.getElementById("valorCracha").value;
-    var valorPresilhaR = document.getElementById("valorPresilha").value;
-    var valorProtetorR = document.getElementById("valorProtetor").value;
-    var valorCordãoR = document.getElementById("valorCordão").value;
+    var empresaR = document.querySelector("#empresa").value;
+    var proximidadeR = document.querySelector("#proximidade").value;
+    var barrasR = document.querySelector("#barras").value;
+    var perfuradoR = document.querySelector("#perfurado").value;
+    var presilhaR = document.querySelector("#presilha").value;
+    var protetorR = document.querySelector("#protetor").value;
+    var cordãoR = document.querySelector("#cordão").value;
+    var valorCrachaR = document.querySelector("#valorCracha").value;
+    var valorPresilhaR = document.querySelector("#valorPresilha").value;
+    var valorProtetorR = document.querySelector("#valorProtetor").value;
+    var valorCordãoR = document.querySelector("#valorCordão").value;
 
     document.getElementById("empresa").value = "";
     document.getElementById("proximidade").selectedIndex = 0;
@@ -41,17 +44,17 @@ btnSalvar.addEventListener("click", function(event){
     var valorProtetor = document.createElement("td");
     var valorCordão = document.createElement("td");
 
-    empresa.textContent = empresaR.value;
-    proximidade.textContent = proximidadeR.value;
-    barras.textContent = barrasR.value;
-    perfurado.textContent = perfuradoR.value;
-    presilha.textContent = presilhaR.value;
-    protetor.textContent = protetorR.value;
-    cordão.textContent = cordãoR.value;
-    valorCracha.textContent = valorCrachaR.value;
-    valorPresilha.textContent = valorPresilhaR.value;
-    valorProtetor.textContent = valorProtetorR.value;
-    valorCordão.textContent = valorCordãoR.value;
+    empresa.textContent = empresaR;
+    proximidade.textContent = proximidadeR;
+    barras.textContent = barrasR;
+    perfurado.textContent = perfuradoR;
+    presilha.textContent = presilhaR;
+    protetor.textContent = protetorR;
+    cordão.textContent = cordãoR;
+    valorCracha.textContent = valorCrachaR;
+    valorPresilha.textContent = valorPresilhaR;
+    valorProtetor.textContent = valorProtetorR;
+    valorCordão.textContent = valorCordãoR;
 
 
 
